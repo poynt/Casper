@@ -17,7 +17,6 @@ var scrollBanner = function () {
 
 
   var blur = 'blur(' + (Math.min(scrollTop, 320) / 320 * 15) + 'px)';
-  $('.content-banner > div').css('background-position-y', Math.max(scrollTop, 0) + 'px');
   $('.content-banner > div').css('-webkit-filter', blur);
   $('.content-banner > div').css('-moz-filter', blur);
   $('.content-banner > div').css('-o-filter', blur);
