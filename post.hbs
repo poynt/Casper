@@ -14,7 +14,6 @@
   <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
 </section>
 <section class="post-content">{{content}}</section>
-<section class="post-tags">{{tags prefix=""}}</section>
 <footer class="post-footer">
   {{#author}}
     {{#if image}}
@@ -53,7 +52,7 @@
     </a>
   </section>
 </footer>
-
+<section class="post-tags">{{tags prefix=""}}</section>
 <section class="post-comments">
   <div id="disqus_thread"></div>
   <script type="text/javascript">
