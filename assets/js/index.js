@@ -29,4 +29,53 @@ if ($('.content-banner').length) {
   scrollBanner();
 }
 
+$('.subscribe-button').click(function () {
+  if (typeof ga !== 'undefined' && ga) {
+    ga('send', 'event', 'subscribe-open', 'click', $(this).data('location'), {
+      type    : $(this).data('type'),
+      referer : ls.referer
+    });
+  }
+  $('html,body').css('overflow', 'hidden');
+  $('#subscribe').addClass('active');
+  $('#subscribe-name').focus();
+});
+
+$('#subscribe').click(function () {
+  $('html,body').css('overflow', 'auto');
+  $('#subscribe').removeClass('active');
+});
+
+$('#subscribe-done').click(function () {
+  $('html,body').css('overflow', 'auto');
+  $('#subscribe-done').removeClass('active');
+});
+
+$('#subscribe > div').click(function (e) {
+  e.stopPropagation();
+});
+
+$('#subscribe-form').submit(function (e) {
+  e.preventDefault();
+
+  $.getJSON(this.action + '?callback=?', $(this).serialize(), function (data) {
+    if (data.Status !== 200) {
+      $('#subscribe-error').text(data.Message).slideDown();
+      return;
+    }
+    $('#subscribe-error').text('').slideUp();
+    $('#subscribe-name').val('');
+    $('#subscribe-email').val('');
+    $('#subscribe-type').val('');
+    $('#subscribe').removeClass('active');
+    $('#subscribe-done').addClass('active');
+
+    setTimeout(function () {
+      $('#subscribe-done').removeClass('active');
+    }, 5000);
+  });
+
+  return false;
+});
+
 })();
