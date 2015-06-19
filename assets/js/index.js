@@ -1,5 +1,8 @@
 (function () {
 
+var ls = window.localStorage || {};
+ls.referer = ls.referer || document.referrer || '';
+
 var scrollBanner = function () {
   var scrollTop = $(window).scrollTop();
 
