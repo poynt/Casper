@@ -41,7 +41,7 @@ $('.subscribe-button').click(function () {
   }
   $('html,body').css('overflow', 'hidden');
   $('#subscribe').addClass('active');
-  $('#subscribe-name').focus();
+  $('#subscribe-firstname').focus();
 });
 
 $('#subscribe').click(function () {
@@ -67,7 +67,8 @@ $('#subscribe-form').submit(function (e) {
       return;
     }
     $('#subscribe-error').text('').slideUp();
-    $('#subscribe-name').val('');
+    $('#subscribe-firstname').val('');
+    $('#subscribe-lastname').val('');
     $('#subscribe-email').val('');
     $('#subscribe-type').val('');
     $('#subscribe').removeClass('active');
