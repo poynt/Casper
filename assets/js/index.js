@@ -17,14 +17,6 @@ var scrollBanner = function () {
   } else {
     $('#nav').removeClass('active');
   }
-
-
-  var blur = 'blur(' + (Math.min(scrollTop, 320) / 320 * 15) + 'px)';
-  $('.content-banner > div').css('-webkit-filter', blur);
-  $('.content-banner > div').css('-moz-filter', blur);
-  $('.content-banner > div').css('-o-filter', blur);
-  $('.content-banner > div').css('-ms-filter', blur);
-  $('.content-banner > div').css('filter', blur);
 };
 
 if ($('.content-banner').length) {
