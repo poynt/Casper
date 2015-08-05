@@ -1,10 +1,13 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-
 <section class="content-banner" id="blog-banner">
   <h1><small>Tag:</small> {{tag.name}}</h1>
+  {{#if image}}
+  <div style="background-image: url({{image}})"></div>
+  {{else}}
   <div></div>
+  {{/if}}
 </section>
 <section class="content-stripe blog-stripe blog-posts-stripe" id="blog-posts"><div>
 {{! The tag below includes the post loop - partials/loop.hbs }}
