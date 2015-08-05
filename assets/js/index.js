@@ -19,8 +19,10 @@ var scrollBanner = function () {
   }
 
   if (scrollTop > 480) {
+    if (!$('#subscribe-slider').hasClass('scrolled')) {
+      setTimeout(function () { $('#subscribe-slider-form-email').focus(); }, 1000);
+    }
     $('#subscribe-slider').addClass('scrolled');
-    setTimeout(function () { $('#subscribe-slider-form-email').focus(); }, 1000);
   } else {
     $('#subscribe-slider').removeClass('scrolled');
   }
@@ -72,6 +74,7 @@ $('#subscribe-form').submit(function (e) {
     $('#subscribe-type').val('');
     $('#subscribe').removeClass('active');
     $('#subscribe-done').addClass('active');
+    ls.subscribed = true;
 
     setTimeout(function () {
       $('#subscribe-done').removeClass('active');
