@@ -3,17 +3,24 @@
 
 {{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-<section class="content-banner" id="blog-banner">
-  <h1><small>Author:</small> {{name}}</h1>
-  <div></div>
+<section class="content-banner blog-banner">
+  <div class="content-banner-bg"></div>
+  <div class="content-banner-hero">
+    <h1>{{name}}</h1>
+    <p>Author</p>
+  </div>
 </section>
+
 {{#if bio}}
-<section class="content-stripe blog-stripe" id="blog-author"><div>
-{{bio}}
-</div></section>
+<section class="content-stripe blog-stripe" id="blog-author">
+  <div>
+    {{bio}}
+  </div>
+</section>
 {{/if}}
 {{/author}}
-<section class="content-stripe blog-stripe blog-posts-stripe" id="blog-posts"><div>
+
+<section class="content-stripe content-stripe-white blog-stripe blog-posts-stripe" id="blog-posts"><div class="container">
 {{! The tag below includes the post loop - partials/loop.hbs }}
 {{> "loop-filtered"}}
 </div></section>

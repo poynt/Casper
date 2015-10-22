@@ -1,15 +1,19 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-<section class="content-banner" id="blog-banner">
-  <h1><small>Tag:</small> {{tag.name}}</h1>
+<section class="content-banner blog-banner">
   {{#if tag.image}}
-  <div style="background-image: url({{tag.image}})"></div>
+  <div class="content-banner-bg" style="background-image: url({{tag.image}})"></div>
   {{else}}
-  <div></div>
+  <div class="content-banner-bg"></div>
   {{/if}}
+  <div class="content-banner-hero">
+    <h1>{{tag.name}}</h1>
+    <p>Tag</p>
+  </div>
 </section>
-<section class="content-stripe blog-stripe blog-posts-stripe" id="blog-posts"><div>
+
+<section class="content-stripe content-stripe-white blog-stripe blog-posts-stripe" id="blog-posts"><div class="container">
 {{! The tag below includes the post loop - partials/loop.hbs }}
 {{> "loop"}}
 </div></section>

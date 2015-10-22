@@ -6,15 +6,16 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 <section class="content-banner blog-banner">
-  <div class="blog-banner-image" style="background-image: url({{image}})"></div>
-  <div class="blog-banner-mask"><div>
+  <div class="content-banner-bg" style="background-image: url({{image}})"></div>
+  <div class="content-banner-hero">
     <h1><a href="{{url}}">{{{title}}}</a></h1>
-    <div class="blog-banner-date"><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></div>
+    <p class="blog-banner-date"><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></p>
     <div class="blog-banner-tags">{{tags prefix=""}}</div>
-  </div></div>
+  </div>
 </section>
-<section class="content-stripe blog-stripe {{post_class}}" id="blog-post"><div>
-<section class="post-content">{{content}}</section>
+
+<section class="content-stripe content-stripe-white docs-stripe blog-stripe {{post_class}}" id="blog-post"><div class="container">
+<section class="post-content docs-stripe-full">{{content}}</section>
 <footer class="post-footer">
   {{#author}}
     {{#if image}}

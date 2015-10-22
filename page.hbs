@@ -6,11 +6,11 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 <section class="content-banner blog-banner">
-  <div class="blog-banner-image" style="background-image: url({{image}})"></div>
-  <div class="blog-banner-mask"><div>
+  <div class="content-banner-bg" style="background-image: url({{image}})"></div>
+  <div class="content-banner-hero">
     <h1><a href="{{url}}">{{{title}}}</a></h1>
-    <div><a class="btn btn-white btn-outline" href="{{url}}">Read</a></div>
-  </div></div>
+    <p><a class="btn btn-white btn-outline" href="{{url}}">Read</a></p>
+  </div>
 </section>
 <section class="content-stripe blog-stripe {{post_class}}" id="blog-post"><div>
 <section class="post-content">{{content}}</section>
